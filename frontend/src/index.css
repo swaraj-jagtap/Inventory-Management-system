@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* === CORRECTED PRINT STYLES FOR 50mm x 25mm STICKER LABEL === */
+@media print {
+  /* This sets the physical size of the paper/sticker in the printer */
+  @page {
+    size: 50mm 25mm;
+    margin: 0;
+  }
+
+  /* Reset body and html for the print context */
+  html, body {
+    width: 50mm;
+    height: 25mm;
+    margin: 0;
+    padding: 0;
+  }
+
+  /*
+    Since we are printing in an iframe, we don't need complex
+    visibility rules. We just style the printable area itself.
+  */
+  .printable-area {
+    
+    padding-top:1.5mm ;
+    justify-content: center;
+    width: 48mm;
+    height: 25mm;
+    padding-left: 4mm; /* A small internal padding */
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+    overflow: hidden;
+    
+    /* These ensure the component doesn't break across pages,
+       which is good practice for labels. */
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Hide the print button if it's somehow included */
+  .no-print {
+    display: none !important;
+  }
+}
