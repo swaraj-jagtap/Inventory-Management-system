@@ -7,11 +7,12 @@ const LoginPage = ({ onLogin }) => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-        if ((username.toLowerCase() === 'admin' && password === 'admin123') || (username.toLowerCase() === 'staff' && password === 'staff123')) {
-            const role = username.toLowerCase() === 'admin' ? 'Admin' : 'Staff';
+        const uname = username.toLowerCase();
+        if ((uname === 'swaraj' && password === 'Swaraj@2004') || (uname === 'staff' && password === 'staff123')) {
+            const role = uname === 'swaraj' ? 'Swaraj' : 'Staff';
             onLogin({ name: username.charAt(0).toUpperCase() + username.slice(1), role });
         } else {
-            setError('Invalid credentials. Try "admin/admin123" or "staff/staff123".');
+            setError('Invalid credentials. Try "Swaraj/Swaraj@2004" or "staff/staff123".');
         }
     };
 
@@ -20,11 +21,11 @@ const LoginPage = ({ onLogin }) => {
             <div className="w-full max-w-md p-8 space-y-8 bg-gray-800 rounded-2xl shadow-2xl border border-gray-700">
                 <div className="text-center">
                     <div className="flex justify-center items-center mb-4">
-                         <img
-      src="/vrindavan_logo.png"
-      alt="Vrindavan Garden Logo"
-      className="w-20 h-20  object-contain border-l-white"
-    />
+                        <img
+                            src="/vrindavan_logo.png"
+                            alt="Vrindavan Garden Logo"
+                            className="w-20 h-20 object-contain"
+                        />
                         <h1 className="text-4xl font-extrabold text-white ml-2">Vrindavan</h1>
                     </div>
                     <p className="text-gray-400">Inventory Management System</p>
@@ -37,7 +38,7 @@ const LoginPage = ({ onLogin }) => {
                             value={username}
                             onChange={(e) => setUsername(e.target.value)}
                             className="w-full bg-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                            placeholder="Enter 'admin' or 'staff'"
+                            placeholder="Enter 'Swaraj' or 'staff'"
                         />
                     </div>
                     <div className="space-y-2">
@@ -47,10 +48,10 @@ const LoginPage = ({ onLogin }) => {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                             className="w-full bg-gray-700 text-white p-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
-                            placeholder="Enter 'admin123' or 'staff123'"
+                            placeholder="Enter 'Swaraj@2004' or 'staff123'"
                         />
                     </div>
-                     {error && <p className="text-red-400 text-sm text-center">{error}</p>}
+                    {error && <p className="text-red-400 text-sm text-center">{error}</p>}
                     <div>
                         <button type="submit" className="w-full py-3 px-4 bg-green-600 text-white rounded-lg font-semibold hover:bg-green-500 transition-colors">
                             Login

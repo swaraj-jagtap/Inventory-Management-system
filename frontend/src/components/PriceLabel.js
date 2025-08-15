@@ -109,8 +109,8 @@ const PriceLabel = ({ product }) => {
             >
                 {/* === HEADER === */}
                 <div className="text-center">
-                    <h2 className="font-bold text-[10px] leading-tight tracking-wide">Vrindavan Garden Center</h2>
-                    <p className="text-[9px] leading-tight text-gray-600">Ph: 9767126970</p>
+                    <h2 className="text-[10px] leading-tight tracking-wide font-extrabold uppercase italic">Vrindavan Garden Center</h2>
+                    <p className="text-[9px] leading-tight text-gray-600">Ph: 9767126970 / 9850372837</p>
                 </div>
 
                 <div className="border-t border-black my-0.5" />
@@ -136,7 +136,7 @@ const PriceLabel = ({ product }) => {
                 {/* === FOOTER === */}
                 <div className="mt-auto pt-[1mm] text-center">
                     {product.price && (
-                        <p className="font-black text-[10px] leading-none tracking-tighter mb-[1mm]">
+                        <p className="font-black text-[11px] leading-none tracking-tighter mb-[1mm]">
                             MRP : ₹{product.price}
                         </p>
                     )}
